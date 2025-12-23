@@ -35,13 +35,13 @@ fi
 
 if [ ! -d graphhopper ]; then
   echo "Cloning graphhopper"
-  git clone https://github.com/graphhopper/graphhopper.git
+  git clone https://github.com/RedstonePfalz/graphhopper.git
 else
   echo "Pulling graphhopper"
   (cd graphhopper; git checkout master; git pull)
 fi
 
-imagename="israelhikingmap/graphhopper:${1:-latest}"
+imagename="redstonepfalz/graphhopper:${1:-latest}"
 if [ "$1" ]; then
   echo "Checking out graphhopper:$1"
   (cd graphhopper; git checkout --detach "$1")
